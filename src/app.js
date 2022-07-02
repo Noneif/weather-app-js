@@ -46,7 +46,7 @@ tempFormC.addEventListener("click", changeFormatTempC);
 function currentTemp(temperature) {
   let temp = Math.round(temperature.data.main.temp);
   let curTemp = document.querySelector(`#cur-num`);
-
+  console.log(temperature);
   let status = temperature.data.weather[0].description;
   let generalStatus = document.querySelector(`#general-current-status`);
 
@@ -60,6 +60,9 @@ function currentTemp(temperature) {
   let stateName = temperature.data.sys.country;
   let cityName = document.querySelector(`#city`);
 
+  let icon = temperature.data.weather[0].icon;
+  let iconImage = document.querySelector(`#icon`);
+
   let curDate = temperature.data.dt * 1000;
   let currentDate = document.querySelector("#date");
 
@@ -69,6 +72,11 @@ function currentTemp(temperature) {
   windSpeed.innerHTML = `${wind}`;
   cityName.innerHTML = `${name}, ${stateName}`;
   currentDate.innerHTML = formatDate(curDate);
+  iconImage.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+  iconImage.setAttribute("alt", temperature.data.weather[0].description);
 }
 // Add a search engine
 function searchCi(event) {
