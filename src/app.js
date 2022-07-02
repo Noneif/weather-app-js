@@ -117,10 +117,7 @@ function currentPosition(position) {
 }
 
 function nav() {
-  //event.preventDefault();
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
-//let button = document.querySelector(`#green`);
-//button.addEventListener("click", nav);
 nav();

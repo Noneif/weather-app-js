@@ -27,11 +27,6 @@ input,
 .btn.btn-primary.blue {
   background: rgb(39, 97, 223);
 }
-.btn.btn-primary.green {
-  background: rgb(4, 161, 4);
-  margin-left: 10px;
-}
-
 /*current temperature*/
 .city {
   font-size: 40px;
