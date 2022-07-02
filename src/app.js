@@ -25,8 +25,7 @@ function formatDate(date) {
 function changeFormatTempF(event) {
   event.preventDefault();
   let curNum = document.querySelector("#cur-num");
-  let temperature = curNum.innerHTML;
-  let fTemp = Math.round((temperature * 9) / 5 + 32);
+  let fTemp = Math.round((celciusTemperature * 9) / 5 + 32);
   curNum.innerHTML = `${fTemp}`;
 }
 let tempFormF = document.querySelector("#temp-farenheit");
@@ -35,10 +34,11 @@ tempFormF.addEventListener("click", changeFormatTempF);
 function changeFormatTempC(event) {
   event.preventDefault();
   let curNum = document.querySelector("#cur-num");
-  let temperature = curNum.innerHTML;
-  let cTemp = Math.round(((temperature - 32) * 5) / 9);
-  curNum.innerHTML = `${cTemp}`;
+  curNum.innerHTML = Math.round(celciusTemperature);
 }
+
+//let celciusTemperature = null;
+
 let tempFormC = document.querySelector("#temp-celcius");
 tempFormC.addEventListener("click", changeFormatTempC);
 
@@ -47,6 +47,9 @@ function currentTemp(temperature) {
   let temp = Math.round(temperature.data.main.temp);
   let curTemp = document.querySelector(`#cur-num`);
   console.log(temperature);
+
+  celciusTemperature = temperature.data.main.temp;
+
   let status = temperature.data.weather[0].description;
   let generalStatus = document.querySelector(`#general-current-status`);
 
