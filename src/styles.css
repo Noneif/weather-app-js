@@ -7,6 +7,9 @@
   border: 3px solid rgb(39, 97, 223);
   background: rgba(39, 97, 223, 0.02);
 }
+.card-body {
+  padding: 30px 20px 10px;
+}
 /*NAV BAR*/
 .date {
   font-family: monospace;
