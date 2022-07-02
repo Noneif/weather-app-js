@@ -1,6 +1,5 @@
-//Feature #1
-//In your project, display the current date and time using JavaScript: Tuesday 16:00
 function formatDate(date) {
+  let now = new Date(date);
   let days = [
     "Sunday",
     "Monday",
@@ -10,30 +9,19 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
-  let hours = date.getHours();
+  let day = days[now.getDay()];
+  let hours = now.getHours();
   if (hours < 10) {
-    hours = "0" + hours;
+    hours = `0${hours}`;
   }
-  let minutes = date.getMinutes();
+  let minutes = now.getMinutes();
   if (minutes < 10) {
-    minutes = "0" + minutes;
+    minutes = `0${minutes}`;
   }
   let fullTime = `${day} ${hours}:${minutes}`;
   return fullTime;
 }
-let now = new Date();
-let current = document.querySelector("#date");
-current.innerHTML = formatDate(now);
-//Feature #2
-//Add a search engine, when searching for a city (i.e. Paris),
-//display the city name on the page after the user submits the form.
-
-//Bonus Feature
-//Display a fake temperature (i.e 17) in Celsius and add
-//a link to convert it to Fahrenheit. When clicking on it,
-//it should convert the temperature to Fahrenheit. When clicking on Celsius,
-//it should convert it back to Celsius.
+// Convert temperature
 function changeFormatTempF(event) {
   event.preventDefault();
   let curNum = document.querySelector("#cur-num");
@@ -54,15 +42,12 @@ function changeFormatTempC(event) {
 let tempFormC = document.querySelector("#temp-celcius");
 tempFormC.addEventListener("click", changeFormatTempC);
 
-// In your project, when a user searches for a city (example: New York),
-// it should display the name of the city on the result page and the current
-// temperature of the city.
-
+// API object
 function currentTemp(temperature) {
   let temp = Math.round(temperature.data.main.temp);
   let curTemp = document.querySelector(`#cur-num`);
 
-  let status = temperature.data.weather[0].main;
+  let status = temperature.data.weather[0].description;
   let generalStatus = document.querySelector(`#general-current-status`);
 
   let humidity = temperature.data.main.humidity;
@@ -72,15 +57,20 @@ function currentTemp(temperature) {
   let windSpeed = document.querySelector(`#wind-speed`);
 
   let name = temperature.data.name;
+  let stateName = temperature.data.sys.country;
   let cityName = document.querySelector(`#city`);
+
+  let curDate = temperature.data.dt * 1000;
+  let currentDate = document.querySelector("#date");
 
   curTemp.innerHTML = `${temp}`;
   generalStatus.innerHTML = `${status}`;
   hum.innerHTML = `${humidity}`;
   windSpeed.innerHTML = `${wind}`;
-  cityName.innerHTML = `${name}`;
+  cityName.innerHTML = `${name}, ${stateName}`;
+  currentDate.innerHTML = formatDate(curDate);
 }
-
+// Add a search engine
 function searchCi(event) {
   event.preventDefault();
   let formControl = document.querySelector("#form-control");
@@ -99,11 +89,7 @@ function searchCi(event) {
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", searchCi);
 
-// 🙀 Bonus point:
-// Add a Current Location button. When clicking on it, it uses the Geolocation
-// API to get your GPS coordinates and display and the city and current
-// temperature using the OpenWeather API.
-
+// Current Location
 function currentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;

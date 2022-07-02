@@ -11,14 +11,17 @@
   padding: 30px 20px 10px;
 }
 /*NAV BAR*/
+.other-temp-character,
 .date {
+  font-size: 18px;
   font-family: monospace;
-  font-weight: 900;
-  color: rgba(39, 97, 223, 0.8);
-  font-size: 22px;
-  line-height: 22px;
+  font-weight: 600;
+  color: rgb(110, 109, 109);
+  line-height: 18px;
 }
-
+.date p {
+  margin: 0;
+}
 /*SEARCH BAR*/
 .fa-solid.fa-magnifying-glass {
   color: rgba(39, 97, 223, 0.8);
@@ -68,6 +71,9 @@ input,
   color: rgb(110, 109, 109);
   line-height: 20px;
 }
+.other-temp-character {
+  padding: 12px 11px;
+}
 .general-current-status {
   font-family: monospace;
   font-weight: 900;
@@ -75,12 +81,8 @@ input,
   font-size: 22px;
   line-height: 22px;
 }
-.other-temp-character {
-  font-size: 18px;
-  font-family: monospace;
-  font-weight: 600;
-  color: rgb(110, 109, 109);
-  line-height: 19px;
+.general-current-status::first-letter {
+  text-transform: capitalize;
 }
 /*Coded*/
 footer {

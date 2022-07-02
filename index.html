@@ -27,10 +27,13 @@
   <body>
     <div class="container">
       <div class="card">
-        <div class="card-body p-20">
+        <div class="card-body">
           <!--Current date & time-->
-          <div class="row mb-3">
-            <div class="col-4 d-flex align-items-end date" id="date"></div>
+          <div class="row mb-1">
+            <div class="col-4 date">
+              <p>Last update:</p>
+              <p id="date"></p>
+            </div>
             <!--SEARCH BAR-->
             <div class="col-8">
               <form id="search-city">
@@ -72,7 +75,7 @@
                 <a href="#" class="pb-3 temp-sign" id="temp-farenheit">°F</a>
               </div>
 
-              <div class="col-3 other-temp-character">
+              <div class="col-4 other-temp-character">
                 <p
                   class="general-current-status"
                   id="general-current-status"
