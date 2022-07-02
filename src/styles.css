@@ -1,0 +1,97 @@
+/*general*/
+.card {
+  max-width: 40rem;
+  min-width: 32rem;
+  display: block;
+  margin: 50px auto;
+  border: 3px solid rgb(39, 97, 223);
+  background: rgba(39, 97, 223, 0.02);
+}
+/*NAV BAR*/
+.date {
+  font-family: monospace;
+  font-weight: 900;
+  color: rgba(39, 97, 223, 0.8);
+  font-size: 22px;
+  line-height: 22px;
+}
+
+/*SEARCH BAR*/
+.fa-solid.fa-magnifying-glass {
+  color: rgba(39, 97, 223, 0.8);
+}
+input,
+.btn.btn-primary {
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+.btn.btn-primary.blue {
+  background: rgb(39, 97, 223);
+}
+.btn.btn-primary.green {
+  background: rgb(4, 161, 4);
+  margin-left: 10px;
+}
+
+/*current temperature*/
+.city {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  color: rgb(86, 31, 189);
+  line-height: 40px;
+}
+.other-temp-character p {
+  margin: 0;
+}
+.full-current {
+  padding-right: 0;
+}
+.cur-num {
+  font-size: 35px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 900;
+  color: rgb(4, 161, 4);
+  margin-left: 10px;
+}
+.temp-sign {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 900;
+  color: rgb(39, 97, 223);
+  line-height: 20px;
+}
+.vertical-slash {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 5px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-weight: 600;
+  color: rgb(110, 109, 109);
+  line-height: 20px;
+}
+.general-current-status {
+  font-family: monospace;
+  font-weight: 900;
+  color: rgba(39, 97, 223, 0.8);
+  font-size: 22px;
+  line-height: 22px;
+}
+.other-temp-character {
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: 600;
+  color: rgb(110, 109, 109);
+  line-height: 19px;
+}
+/*Coded*/
+footer {
+  text-align: center;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  color: rgba(86, 31, 189, 0.5);
+  font-size: 13px;
+  font-weight: bold;
+}
+.footer-link {
+  text-decoration: none;
+}
