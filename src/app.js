@@ -21,6 +21,32 @@ function formatDate(date) {
   let fullTime = `${day} ${hours}:${minutes}`;
   return fullTime;
 }
+// Forecast days
+function addForecastDays() {
+  let htmlElement = document.querySelector("#forecast");
+  let addHtml = `<div class="row five-days">`;
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    addHtml =
+      addHtml +
+      `<div class="col text-center">
+                <p class="day">${day}</p>
+                <img
+                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  alt="weater"
+                  width="50px"
+                  class="day-sign"
+                  id="day-sign"
+                />
+                <p class="day-temp">
+                  <span class="day-temp-min">10°</span> 20°
+                </p>
+              </div>`;
+  });
+  addHtml = addHtml + `</div>`;
+  htmlElement.innerHTML = addHtml;
+}
+
 // Convert temperature
 function changeFormatTempF(event) {
   event.preventDefault();
@@ -121,3 +147,4 @@ function nav() {
 }
 
 nav();
+addForecastDays();
