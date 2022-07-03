@@ -24,6 +24,8 @@ function formatDate(date) {
 // Convert temperature
 function changeFormatTempF(event) {
   event.preventDefault();
+  tempFormC.classList.remove("active");
+  tempFormF.classList.add("active");
   let curNum = document.querySelector("#cur-num");
   let fTemp = Math.round((celciusTemperature * 9) / 5 + 32);
   curNum.innerHTML = `${fTemp}`;
@@ -33,11 +35,13 @@ tempFormF.addEventListener("click", changeFormatTempF);
 
 function changeFormatTempC(event) {
   event.preventDefault();
+  tempFormF.classList.remove("active");
+  tempFormC.classList.add("active");
   let curNum = document.querySelector("#cur-num");
   curNum.innerHTML = Math.round(celciusTemperature);
 }
 
-//let celciusTemperature = null;
+let celciusTemperature = null;
 
 let tempFormC = document.querySelector("#temp-celcius");
 tempFormC.addEventListener("click", changeFormatTempC);
@@ -46,7 +50,6 @@ tempFormC.addEventListener("click", changeFormatTempC);
 function currentTemp(temperature) {
   let temp = Math.round(temperature.data.main.temp);
   let curTemp = document.querySelector(`#cur-num`);
-  console.log(temperature);
 
   celciusTemperature = temperature.data.main.temp;
 

@@ -67,12 +67,19 @@ input,
   color: rgb(39, 97, 223);
   line-height: 53px;
 }
+.temp-sign.active {
+  color: rgb(110, 109, 109);
+  cursor: default;
+}
+.temp-sign.active:hover {
+  text-decoration: none;
+}
 .vertical-slash {
   text-decoration: none;
   font-size: 20px;
   margin: 0 5px;
   font-family: "Kdam Thmor Pro", sans-serif;
-  font-weight: 600;
+  font-weight: 550;
   color: rgb(110, 109, 109);
   line-height: 53px;
 }
