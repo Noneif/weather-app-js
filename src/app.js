@@ -30,24 +30,39 @@ function forecastHourApi(parameter) {
   axios.get(apiUrl).then(addForecastHour);
 }
 
-function addForecastHour() {
+function fixHourDisplay(key) {
+  let time = new Date(key * 1000);
+  let hour = time.getHours();
+  if (hour < 10) {
+    return `0${hour}`;
+  } else {
+    return hour;
+  }
+}
+
+function addForecastHour(parameter) {
   let htmlElement = document.querySelector("#forecast-hour");
   let addHtml = `<div class="row cur-day">`;
-  let hours = ["00", "01", "02", "03", "04", "05", "06"];
-  hours.forEach(function (hour) {
-    addHtml =
-      addHtml +
-      ` <div class="col text-center">
-                <p class="hour">${hour}</p>
+  let hours = parameter.data.hourly;
+
+  hours.forEach(function (hourForecast, index) {
+    if (index < 7) {
+      addHtml =
+        addHtml +
+        ` <div class="col text-center">
+                <p class="hour">${fixHourDisplay(hourForecast.dt)}</p>
                 <img
-                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  src="http://openweathermap.org/img/wn/${
+                    hourForecast.weather[0].icon
+                  }@2x.png"
                   alt="weater"
                   width="50px"
                   class="day-sign"
                   id="day-sign"
                 />
-                <p class="cur-day-temp">15°</p>
+                <p class="cur-day-temp">${Math.round(hourForecast.temp)}°</p>
               </div>`;
+    }
   });
   addHtml = addHtml + ` </div>`;
   htmlElement.innerHTML = addHtml;
@@ -62,26 +77,49 @@ function forecastDaysApi(parameter) {
   axios.get(apiUrl).then(addForecastDays);
 }
 
-function addForecastDays() {
+function fixDayDisplay(key) {
+  let time = new Date(key * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[time.getDay()];
+  return day;
+}
+
+function addForecastDays(parameter) {
   let htmlElement = document.querySelector("#forecast");
   let addHtml = `<div class="row five-days">`;
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    addHtml =
-      addHtml +
-      `<div class="col text-center">
-                <p class="day">${day}</p>
+  let days = parameter.data.daily;
+  days.forEach(function (dayForecast, index) {
+    if (index < 5) {
+      addHtml =
+        addHtml +
+        `<div class="col text-center">
+                <p class="day">${fixDayDisplay(dayForecast.dt)}</p>
                 <img
-                  src="http://openweathermap.org/img/wn/04d@2x.png"
+                  src="http://openweathermap.org/img/wn/${
+                    dayForecast.weather[0].icon
+                  }@2x.png"
                   alt="weater"
                   width="50px"
                   class="day-sign"
                   id="day-sign"
                 />
                 <p class="day-temp">
-                  <span class="day-temp-min">10°</span><span class="day-temp-max"> 20°</span>
+                  <span class="day-temp-min">${Math.round(
+                    dayForecast.temp.min
+                  )}°</span><span class="day-temp-max"> ${Math.round(
+          dayForecast.temp.max
+        )}°</span>
                 </p>
               </div>`;
+    }
   });
   addHtml = addHtml + `</div>`;
   htmlElement.innerHTML = addHtml;
@@ -190,4 +228,3 @@ function nav() {
 }
 
 nav();
-addForecastHour();
