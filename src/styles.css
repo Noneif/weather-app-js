@@ -12,7 +12,8 @@
 }
 /*NAV BAR*/
 .other-temp-character,
-.date {
+.date,
+.hour {
   font-size: 18px;
   font-family: monospace;
   font-weight: 600;
@@ -96,22 +97,25 @@ input,
 .general-current-status::first-letter {
   text-transform: capitalize;
 }
-/*temperature for 5 days*/
+/*temperature for the current day*/
+.row.cur-day,
 .row.five-days {
   margin-bottom: 40px;
 }
-.day {
-  font-family: monospace;
-  font-weight: 900;
-  color: rgba(39, 97, 223, 0.8);
-  font-size: 17px;
-  margin: 0;
-}
+.cur-day-temp,
 .day-temp {
   font-size: 18px;
   font-family: monospace;
   font-weight: 600;
   color: rgb(4, 161, 4);
+  margin: 0;
+}
+/*temperature for 5 days*/
+.day {
+  font-family: monospace;
+  font-weight: 900;
+  color: rgba(39, 97, 223, 0.8);
+  font-size: 17px;
   margin: 0;
 }
 .day-temp-min {
