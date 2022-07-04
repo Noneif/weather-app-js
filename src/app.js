@@ -22,6 +22,14 @@ function formatDate(date) {
   return fullTime;
 }
 // Forecast hours
+function forecastHourApi(parameter) {
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/onecall?`;
+  let apiUrl = `${url}lat=${parameter.lat}&lon=${parameter.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(addForecastHour);
+}
+
 function addForecastHour() {
   let htmlElement = document.querySelector("#forecast-hour");
   let addHtml = `<div class="row cur-day">`;
@@ -46,6 +54,14 @@ function addForecastHour() {
 }
 
 // Forecast days
+function forecastDaysApi(parameter) {
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/onecall?`;
+  let apiUrl = `${url}lat=${parameter.lat}&lon=${parameter.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(addForecastDays);
+}
+
 function addForecastDays() {
   let htmlElement = document.querySelector("#forecast");
   let addHtml = `<div class="row five-days">`;
@@ -133,6 +149,9 @@ function currentTemp(temperature) {
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
   iconImage.setAttribute("alt", temperature.data.weather[0].description);
+
+  forecastDaysApi(temperature.data.coord);
+  forecastHourApi(temperature.data.coord);
 }
 // Add a search engine
 function searchCi(event) {
@@ -172,4 +191,3 @@ function nav() {
 
 nav();
 addForecastHour();
-addForecastDays();
