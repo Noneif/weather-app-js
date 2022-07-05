@@ -1,3 +1,4 @@
+// Display time of the last updated date
 function formatDate(date) {
   let now = new Date(date);
   let days = [
@@ -44,7 +45,6 @@ function addForecastHour(parameter) {
   let htmlElement = document.querySelector("#forecast-hour");
   let addHtml = `<div class="row cur-day">`;
   let hours = parameter.data.hourly;
-
   hours.forEach(function (hourForecast, index) {
     if (index < 7) {
       addHtml =

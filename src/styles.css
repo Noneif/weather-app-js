@@ -98,9 +98,18 @@ input,
   text-transform: capitalize;
 }
 /*temperature for the current day*/
+.forecast-hour,
+.forecast {
+  padding: 0 12px;
+}
+
 .row.cur-day,
 .row.five-days {
+  background: rgba(86, 31, 189, 0.03);
+  padding: 20px 12px;
   margin-bottom: 40px;
+  border: 2px solid rgba(86, 31, 189, 0.1);
+  border-radius: 15px;
 }
 .cur-day-temp,
 .day-temp {
