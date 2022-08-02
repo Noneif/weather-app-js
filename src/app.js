@@ -55,7 +55,7 @@ function addForecastHour(parameter) {
                   src="http://openweathermap.org/img/wn/${
                     hourForecast.weather[0].icon
                   }@2x.png"
-                  alt="weater"
+                  alt="${hourForecast.weather[0].description}"
                   width="50px"
                   class="day-sign"
                   id="day-sign"
@@ -106,7 +106,7 @@ function addForecastDays(parameter) {
                   src="http://openweathermap.org/img/wn/${
                     dayForecast.weather[0].icon
                   }@2x.png"
-                  alt="weater"
+                  alt="${dayForecast.weather[0].description}"
                   width="50px"
                   class="day-sign"
                   id="day-sign"
