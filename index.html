@@ -28,14 +28,35 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
+          <!-- City links -->
+          <div class="row text-center cityLinks">
+            <div class="col-4 col-md-2 link" id="linkKyiv">
+              <a href="#"> KYIV </a>
+            </div>
+            <div class="col-4 col-md-2 link" id="linkVienna">
+              <a href="#"> VIENNA </a>
+            </div>
+            <div class="col-4 col-md-2 link" id="linkLondon">
+              <a href="#"> LONDON </a>
+            </div>
+            <div class="col-4 col-md-2 link" id="linkParis">
+              <a href="#"> PARIS </a>
+            </div>
+            <div class="col-4 col-md-2 link" id="linkBerlin">
+              <a href="#"> BERLIN </a>
+            </div>
+            <div class="col-4 col-md-2 link" id="linkLisbon">
+              <a href="#"> LISBON </a>
+            </div>
+          </div>
           <!--Current date & time-->
-          <div class="row mb-1">
-            <div class="col-4 date">
-              <p>Last update:</p>
-              <p id="date"></p>
+          <div class="row mb-3">
+            <div class="col-sm-4 mb-2 mb-sm-0 text-center text-sm-start date">
+              <p class="d-inline">Last update:</p>
+              <p class="d-inline" id="date"></p>
             </div>
             <!--SEARCH BAR-->
-            <div class="col-8">
+            <div class="col-sm-8">
               <form id="search-city">
                 <div class="input-group mb-0 box">
                   <span class="input-group-text"
@@ -56,20 +77,20 @@
           </div>
           <!--current temperature-->
           <section>
-            <div class="row mb-5 cur_temp-serch">
-              <div class="col-4 city" id="city"></div>
-              <div class="col-4 full-current" id="full-current">
+            <div class="row mb-5 d-flex align-items-center cur_temp-serch">
+              <div class="col-12 text-center city" id="city"></div>
+              <div class="col-12 text-center full-current" id="full-current">
                 <img src="" alt="weather" class="icon" id="icon" />
                 <span class="align-middle cur-num" id="cur-num"></span>
                 <a href="#" class="align-top temp-sign active" id="temp-celcius"
-                  >°C</a
+                  >° C</a
                 >
                 <span class="align-top vertical-slash">|</span>
                 <a href="#" class="align-top temp-sign" id="temp-farenheit"
-                  >°F</a
+                  >° F</a
                 >
               </div>
-              <div class="col-4 other-temp-character">
+              <div class="col-12 text-center other-temp-character">
                 <p
                   class="general-current-status"
                   id="general-current-status"
@@ -80,18 +101,24 @@
             </div>
           </section>
           <!--temperature for the current day-->
+          <div class="titleForecast t-hour">
+            <i class="fa-solid fa-clock"></i> HOURLY FORECAST
+          </div>
           <section class="forecast-hour" id="forecast-hour"></section>
-          <!--temperature for 5 days-->
+          <!--temperature for 6 days-->
+          <div class="titleForecast t-day">
+            <i class="fa-regular fa-calendar-days"></i> 6-DAY FORECAST
+          </div>
           <section class="forecast" id="forecast"></section>
           <!--Coded by-->
           <footer>
+            NoName
             <a
               href="https://github.com/Noneif/draft-weather-app-current-time"
               target="_blank"
               class="footer-link"
-              >Open-source code</a
-            >
-            by NoName
+              ><i class="fa-brands fa-github"></i
+            ></a>
           </footer>
         </div>
       </div>

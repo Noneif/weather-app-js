@@ -1,52 +1,80 @@
+:root {
+  --main-font: "Kdam Thmor Pro", sans-serif;
+  --secondary-font: monospace;
+  --main-color: #fdffab;
+  --second-color: #c7efcf;
+  --background-color: #59a985;
+}
 /*general*/
 .card {
-  max-width: 40rem;
-  /* min-width: 32rem; */
+  max-width: 750px;
   display: block;
   margin: 50px auto;
-  border: 3px solid rgb(39, 97, 223);
-  background: rgba(39, 97, 223, 0.02);
+  background: var(--background-color);
 }
 .card-body {
   padding: 30px 20px 10px;
 }
+/* City links */
+.cityLinks {
+  padding: 10px 20px;
+  background: var(--main-color);
+  border-radius: 10px;
+  margin: 0 0 20px;
+}
+.cityLinks .link {
+  padding: 0;
+}
+.cityLinks a {
+  text-decoration: none;
+  font-size: 12px;
+  font-family: var(--main-font);
+  font-weight: 600;
+  color: var(--background-color);
+}
+
 /*NAV BAR*/
 .other-temp-character,
-.date,
-.hour {
+.date {
   font-size: 18px;
-  font-family: monospace;
+  font-family: var(--secondary-font);
   font-weight: 600;
-  color: rgb(110, 109, 109);
-  line-height: 18px;
+  color: var(--main-color);
+  line-height: 1.2;
 }
 .date p {
   margin: 0;
 }
 /*SEARCH BAR*/
+.input-group-text {
+  background-color: var(--second-color);
+}
 .fa-solid.fa-magnifying-glass {
-  color: rgba(39, 97, 223, 0.8);
+  color: var(--background-color);
 }
 input,
 .btn.btn-primary {
-  font-family: "Kdam Thmor Pro", sans-serif;
+  font-family: var(--main-font);
 }
 .btn.btn-primary.blue {
-  background: rgb(39, 97, 223);
+  color: var(--background-color);
+  background: var(--second-color);
+  border-color: var(--second-color);
+}
+.btn.btn-primary.blue:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 /*current temperature*/
 .city {
   font-size: 40px;
   font-weight: bold;
-  font-family: "Kdam Thmor Pro", sans-serif;
-  color: rgb(86, 31, 189);
-  line-height: 44px;
+  font-family: var(--main-font);
+  color: var(--second-color);
+  line-height: 1.2;
 }
 .other-temp-character p {
   margin: 0;
-}
-.full-current {
-  padding: 12px 0;
 }
 .icon {
   height: 65px;
@@ -54,22 +82,22 @@ input,
 }
 .cur-num {
   font-size: 36px;
-  font-family: "Kdam Thmor Pro", sans-serif;
+  font-family: var(--main-font);
   font-weight: 900;
-  color: rgb(4, 161, 4);
-  line-height: 36px;
+  color: var(--main-color);
+  line-height: 1.2;
   padding-right: 4px;
 }
 .temp-sign {
   text-decoration: none;
   font-size: 20px;
-  font-family: "Kdam Thmor Pro", sans-serif;
+  font-family: var(--main-font);
   font-weight: 900;
-  color: rgb(39, 97, 223);
+  color: var(--second-color);
   line-height: 53px;
 }
 .temp-sign.active {
-  color: rgb(110, 109, 109);
+  color: var(--main-color);
   cursor: default;
 }
 .temp-sign.active:hover {
@@ -79,51 +107,54 @@ input,
   text-decoration: none;
   font-size: 20px;
   margin: 0 5px;
-  font-family: "Kdam Thmor Pro", sans-serif;
+  font-family: var(--main-font);
   font-weight: 550;
-  color: rgb(110, 109, 109);
+  color: var(--main-color);
   line-height: 53px;
 }
-.other-temp-character {
-  padding: 12px 11px;
-}
 .general-current-status {
-  font-family: monospace;
+  font-family: var(--secondary-font);
   font-weight: 900;
-  color: rgba(39, 97, 223, 0.8);
+  color: var(--second-color);
   font-size: 22px;
-  line-height: 22px;
+  line-height: 1.2;
 }
 .general-current-status::first-letter {
   text-transform: capitalize;
 }
 /*temperature for the current day*/
-.forecast-hour,
-.forecast {
-  padding: 0 12px;
+.titleForecast {
+  font-size: 12px;
+  font-family: var(--main-font);
+  font-weight: 600;
+  color: var(--background-color);
+  padding: 10px 20px;
+  background: var(--main-color);
+  border-radius: 10px;
+}
+.hour {
+  margin: 0;
 }
 .row.cur-day,
 .row.five-days {
-  background: rgba(86, 31, 189, 0.03);
   padding: 20px 12px;
-  margin-bottom: 40px;
-  border: 2px solid rgba(86, 31, 189, 0.1);
-  border-radius: 15px;
+  margin-bottom: 30px;
 }
 .cur-day-temp,
 .day-temp {
-  font-size: 18px;
-  font-family: monospace;
+  font-size: 16px;
+  font-family: var(--secondary-font);
   font-weight: 600;
-  color: rgb(4, 161, 4);
+  color: var(--main-color);
   margin: 0;
 }
 /*temperature for 5 days*/
-.day {
-  font-family: monospace;
+.day,
+.hour {
+  font-family: var(--secondary-font);
   font-weight: 900;
-  color: rgba(39, 97, 223, 0.8);
-  font-size: 17px;
+  color: var(--second-color);
+  font-size: 18px;
   margin: 0;
 }
 .day-temp-min {
@@ -132,11 +163,27 @@ input,
 /*Coded*/
 footer {
   text-align: center;
-  font-family: "Kdam Thmor Pro", sans-serif;
-  color: rgba(86, 31, 189, 0.5);
-  font-size: 13px;
+  font-family: var(--secondary-font);
+  color: var(--main-color);
+  font-size: 20px;
   font-weight: bold;
 }
 .footer-link {
   text-decoration: none;
+  color: var(--second-color);
+  font-size: 25px;
+}
+.footer-link:hover {
+  color: var(--main-color);
+}
+@media (max-width: 768px) {
+  .card {
+    display: block;
+    margin: 0 auto;
+  }
+  .row.cur-day,
+  .row.five-days {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+  }
 }

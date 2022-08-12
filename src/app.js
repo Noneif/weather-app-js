@@ -46,10 +46,10 @@ function addForecastHour(parameter) {
   let addHtml = `<div class="row cur-day">`;
   let hours = parameter.data.hourly;
   hours.forEach(function (hourForecast, index) {
-    if (index < 7) {
+    if (index < 6) {
       addHtml =
         addHtml +
-        ` <div class="col text-center">
+        ` <div class="col-4 col-md-2 d-block justify-content-center p-2 text-center">
                 <p class="hour">${fixHourDisplay(hourForecast.dt)}</p>
                 <img
                   src="http://openweathermap.org/img/wn/${
@@ -79,15 +79,7 @@ function forecastDaysApi(parameter) {
 
 function fixDayDisplay(key) {
   let time = new Date(key * 1000);
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[time.getDay()];
   return day;
 }
@@ -97,10 +89,10 @@ function addForecastDays(parameter) {
   let addHtml = `<div class="row five-days">`;
   let days = parameter.data.daily;
   days.forEach(function (dayForecast, index) {
-    if (index < 5) {
+    if (index < 6) {
       addHtml =
         addHtml +
-        `<div class="col text-center">
+        `<div class="col-4 col-md-2 justify-content-center p-2 text-center">
                 <p class="day">${fixDayDisplay(dayForecast.dt)}</p>
                 <img
                   src="http://openweathermap.org/img/wn/${
@@ -209,6 +201,97 @@ function searchCi(event) {
 
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", searchCi);
+
+// Cities links
+function searchKyiv(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  city.innerHTML = `Kyiv`;
+
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q`;
+  let apiUrl = `${url}=Kyiv&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentTemp);
+}
+
+function searchVienna(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  city.innerHTML = `Vienna`;
+
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q`;
+  let apiUrl = `${url}=Vienna&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentTemp);
+}
+
+function searchLondon(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  city.innerHTML = `London`;
+
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q`;
+  let apiUrl = `${url}=London&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentTemp);
+}
+
+function searchParis(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  city.innerHTML = `Paris`;
+
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q`;
+  let apiUrl = `${url}=Paris&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentTemp);
+}
+
+function searchBerlin(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  city.innerHTML = `Berlin`;
+
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q`;
+  let apiUrl = `${url}=Berlin&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentTemp);
+}
+
+function searchLisbon(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  city.innerHTML = `Lisbon`;
+
+  let apiKey = `94acf2da0785bb3e4d1e3cb839ee7521`;
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q`;
+  let apiUrl = `${url}=Lisbon&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentTemp);
+}
+
+let linkKyiv = document.querySelector("#linkKyiv");
+linkKyiv.addEventListener("click", searchKyiv);
+
+let linkVienna = document.querySelector("#linkVienna");
+linkVienna.addEventListener("click", searchVienna);
+
+let linkLondon = document.querySelector("#linkLondon");
+linkLondon.addEventListener("click", searchLondon);
+
+let linkParis = document.querySelector("#linkParis");
+linkParis.addEventListener("click", searchParis);
+
+let linkBerlin = document.querySelector("#linkBerlin");
+linkBerlin.addEventListener("click", searchBerlin);
+
+let linkLisbon = document.querySelector("#linkLisbon");
+linkLisbon.addEventListener("click", searchLisbon);
 
 // Current Location
 function currentPosition(position) {
