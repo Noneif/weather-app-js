@@ -100,6 +100,9 @@ input,
   color: var(--second-color);
   line-height: 53px;
 }
+.temp-sign:hover {
+  color: var(--main-color);
+}
 .temp-sign.active {
   color: var(--main-color);
   cursor: default;
