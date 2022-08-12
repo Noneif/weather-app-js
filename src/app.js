@@ -48,7 +48,7 @@ function addForecastHour(parameter) {
   addHtml =
     addHtml +
     ` <div class="col-4 col-md-2 d-block justify-content-center p-2 text-center">
-                <p class="hour">Now</p>
+                <p class="hour-now">Now</p>
                 <img
                   src="http://openweathermap.org/img/wn/${
                     hours[0].weather[0].icon
@@ -106,7 +106,7 @@ function addForecastDays(parameter) {
   addHtml =
     addHtml +
     `<div class="col-4 col-md-2 justify-content-center p-2 text-center">
-                <p class="day">Today</p>
+                <p class="day-today">Today</p>
                 <img
                   src="http://openweathermap.org/img/wn/${
                     days[0].weather[0].icon

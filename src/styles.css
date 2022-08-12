@@ -140,7 +140,11 @@ input,
   background: var(--main-color);
   border-radius: 10px;
 }
-.hour {
+.hour-now {
+  font-family: var(--main-font);
+  font-weight: 900;
+  color: var(--main-color);
+  font-size: 18px;
   margin: 0;
 }
 .row.cur-day,
@@ -162,6 +166,13 @@ input,
   font-family: var(--secondary-font);
   font-weight: 900;
   color: var(--second-color);
+  font-size: 18px;
+  margin: 0;
+}
+.day-today {
+  font-family: var(--main-font);
+  font-weight: 900;
+  color: var(--main-color);
   font-size: 18px;
   margin: 0;
 }
