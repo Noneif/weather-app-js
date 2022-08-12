@@ -52,6 +52,7 @@
 }
 .form-control {
   border-color: var(--second-color);
+  color: var(--background-color);
 }
 .fa-solid.fa-magnifying-glass {
   color: var(--background-color);

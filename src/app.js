@@ -45,8 +45,23 @@ function addForecastHour(parameter) {
   let htmlElement = document.querySelector("#forecast-hour");
   let addHtml = `<div class="row cur-day">`;
   let hours = parameter.data.hourly;
+  addHtml =
+    addHtml +
+    ` <div class="col-4 col-md-2 d-block justify-content-center p-2 text-center">
+                <p class="hour">Now</p>
+                <img
+                  src="http://openweathermap.org/img/wn/${
+                    hours[0].weather[0].icon
+                  }@2x.png"
+                  alt="${hours[0].weather[0].description}"
+                  width="50px"
+                  class="day-sign"
+                  id="day-sign"
+                />
+                <p class="cur-day-temp">${Math.round(hours[0].temp)}°</p>
+              </div>`;
   hours.forEach(function (hourForecast, index) {
-    if (index < 6) {
+    if (index > 0 && index < 6) {
       addHtml =
         addHtml +
         ` <div class="col-4 col-md-2 d-block justify-content-center p-2 text-center">
@@ -88,8 +103,29 @@ function addForecastDays(parameter) {
   let htmlElement = document.querySelector("#forecast");
   let addHtml = `<div class="row five-days">`;
   let days = parameter.data.daily;
+  addHtml =
+    addHtml +
+    `<div class="col-4 col-md-2 justify-content-center p-2 text-center">
+                <p class="day">Today</p>
+                <img
+                  src="http://openweathermap.org/img/wn/${
+                    days[0].weather[0].icon
+                  }@2x.png"
+                  alt="${days[0].weather[0].description}"
+                  width="50px"
+                  class="day-sign"
+                  id="day-sign"
+                />
+                <p class="day-temp">
+                  <span class="day-temp-min">${Math.round(
+                    days[0].temp.min
+                  )}°</span><span class="day-temp-max"> ${Math.round(
+      days[0].temp.max
+    )}°</span>
+                </p>
+              </div>`;
   days.forEach(function (dayForecast, index) {
-    if (index < 6) {
+    if (index > 0 && index < 6) {
       addHtml =
         addHtml +
         `<div class="col-4 col-md-2 justify-content-center p-2 text-center">
