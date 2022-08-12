@@ -48,6 +48,10 @@
 /*SEARCH BAR*/
 .input-group-text {
   background-color: var(--second-color);
+  border-color: var(--second-color);
+}
+.form-control {
+  border-color: var(--second-color);
 }
 .fa-solid.fa-magnifying-glass {
   color: var(--background-color);
