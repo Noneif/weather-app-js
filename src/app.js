@@ -101,7 +101,7 @@ function fixDayDisplay(key) {
 
 function addForecastDays(parameter) {
   let htmlElement = document.querySelector("#forecast");
-  let addHtml = `<div class="row five-days">`;
+  let addHtml = `<div class="row six-days">`;
   let days = parameter.data.daily;
   addHtml =
     addHtml +

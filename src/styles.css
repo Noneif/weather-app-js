@@ -148,7 +148,7 @@ input,
   margin: 0;
 }
 .row.cur-day,
-.row.five-days {
+.row.six-days {
   padding: 20px 12px;
   margin-bottom: 30px;
 }
@@ -201,7 +201,7 @@ footer {
     margin: 0 auto;
   }
   .row.cur-day,
-  .row.five-days {
+  .row.six-days {
     padding: 10px 12px;
     margin-bottom: 10px;
   }
