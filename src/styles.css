@@ -203,6 +203,12 @@ footer {
   .row.cur-day,
   .row.six-days {
     padding: 10px 12px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+  }
+  footer {
+    margin-top: 40px;
+  }
+  .titleForecast {
+    margin-top: 10px;
   }
 }
