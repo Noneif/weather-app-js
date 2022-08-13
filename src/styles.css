@@ -20,7 +20,7 @@
   padding: 10px 20px;
   background: var(--main-color);
   border-radius: 10px;
-  margin: 0 0 20px;
+  margin: 0 0 30px;
 }
 .cityLinks .link {
   padding: 0;
@@ -99,7 +99,7 @@ input,
   font-family: var(--main-font);
   font-weight: 900;
   color: var(--second-color);
-  line-height: 53px;
+  line-height: 2.5;
 }
 .temp-sign:hover {
   color: var(--main-color);
@@ -118,7 +118,7 @@ input,
   font-family: var(--main-font);
   font-weight: 550;
   color: var(--main-color);
-  line-height: 53px;
+  line-height: 2.5;
 }
 .general-current-status {
   font-family: var(--secondary-font);
