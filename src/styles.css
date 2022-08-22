@@ -6,6 +6,9 @@
   --background-color: #59a985;
 }
 /*general*/
+body {
+  background: #59a9851a;
+}
 .card {
   max-width: 750px;
   display: block;
